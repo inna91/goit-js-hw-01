@@ -4,7 +4,7 @@ let input;
 let total = 0;
 
 do {
-  let input = prompt('Введите число');
+  input = prompt('Введите число');
 
   if (input === null) {
     console.log('Отменено пользователем!');
