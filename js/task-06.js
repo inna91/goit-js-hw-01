@@ -6,21 +6,16 @@ let total = 0;
 do {
   input = prompt('Введите число');
 
-  if (input === null) {
-    console.log('Отменено пользователем!');
-    break;
+  if (input !== null) {
+    input = Number(input);
+
+    if (Number.isNaN(+input)) {
+      console.log('Было введено не число, попробуйте еще раз');
+      continue;
+    }
+
+    total += input;
   }
-
-  input = Number(input);
-
-  const notANumber = Number.isNaN(input);
-
-  if (notANumber) {
-    console.log('Было введено не число, попробуйте еще раз');
-    continue;
-  }
-
-  total += input;
-} while (true);
+} while (input !== null);
 
 alert(`Общая сумма чисел равна ${total}`);

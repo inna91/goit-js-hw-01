@@ -1,13 +1,15 @@
 'use strict';
 
-const china = 'Китай';
-const chile = 'Чили';
-const australia = 'Австралия';
-const india = 'Индия';
-const jamaica = 'Ямайка';
-
-let message;
-let price;
+const china = 'китай';
+const chile = 'чили';
+const australia = 'австралия';
+const india = 'индия';
+const jamaica = 'ямайка';
+const priceChina = 100;
+const priceChile = 250;
+const priceAustralia = 170;
+const priceIndia = 80;
+const priceJamaica = 120;
 
 const userInput = prompt(
   'Укажите, пожалуйста, страну, в которую нужно доставить товар.',
@@ -15,41 +17,27 @@ const userInput = prompt(
 
 if (userInput === null) {
   alert('Отменено пользователем!');
-} else if (userInput === '') {
-  alert('Вы ничего не указали');
 } else {
-  const normalizedInput =
-    userInput[0].toUpperCase() + userInput.slice(1).toLowerCase();
 
-  switch (normalizedInput) {
-    case china:
-      price = 100;
-      message = `Доставка в ${china} будет стоить ${price} кредитов`;
-      console.log(message);
+  switch (userInput.toLowerCase()) {
+    case 'китай':
+      console.log(`Доставка в ${china} будет стоить ${priceChina} кредитов`);
       break;
 
-    case chile:
-      price = 250;
-      message = `Доставка в ${chile} будет стоить ${price} кредитов`;
-      console.log(message);
+    case 'чили':
+      console.log(`Доставка в ${chile} будет стоить ${priceChile} кредитов`);
       break;
 
-    case australia:
-      price = 170;
-      message = `Доставка в ${australia} будет стоить ${price} кредитов`;
-      console.log(message);
+    case 'австралия':
+      console.log(`Доставка в ${australia} будет стоить ${priceAustralia} кредитов`);
       break;
 
-    case india:
-      price = 80;
-      message = `Доставка в ${india} будет стоить ${price} кредитов`;
-      console.log(message);
+    case 'индия':
+      console.log(`Доставка в ${india} будет стоить ${priceIndia} кредитов`);
       break;
 
-    case jamaica:
-      price = 120;
-      message = `Доставка в ${jamaica} будет стоить ${price} кредитов`;
-      console.log(message);
+    case 'ямайка':
+      console.log(`Доставка в ${jamaica} будет стоить ${priceJamaica} кредитов`);
       break;
 
     default:
